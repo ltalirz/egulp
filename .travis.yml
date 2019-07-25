@@ -1,0 +1,5 @@
+install:
+  - cd src; make
+
+script:
+  - cd example/HKUST1; ../../src/egulp HKUST.cif GMP.param configure.input
