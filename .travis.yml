@@ -6,10 +6,11 @@ addons:
     - libgsl0-dev
 
 install:
-  - cd src; make; export PATH=$PATH:`pwd`
-
-
+  - cd src && make && cd - 
+  - export PATH=$PATH:`pwd`/src
 
 script:
-  - cd example/HKUST1; egulp HKUST.cif GMP.param configure.input
-  - cd tests/cif_parsing; ./run.sh
+  # run example
+  - cd example/HKUST1 && egulp HKUST.cif GMP.param configure.input && cd -
+  # run CIF parsing tests
+  - cd tests/cif_parsing && ./run.sh && cd -
