@@ -1,5 +1,6 @@
 install:
-  - cd src; make
+  - cd src; make; export PATH=`pwd`
 
 script:
-  - cd example/HKUST1; ../../src/egulp HKUST.cif GMP.param configure.input
+  - cd example/HKUST1; egulp HKUST.cif GMP.param configure.input
+  - cd tests/cif_parsing; ./run.sh
