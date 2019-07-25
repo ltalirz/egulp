@@ -1,7 +1,14 @@
 language: c
 
+addons:
+  apt:
+    packages:
+    - libgsl0-dev
+
 install:
   - cd src; make; export PATH=$PATH:`pwd`
+
+
 
 script:
   - cd example/HKUST1; egulp HKUST.cif GMP.param configure.input
