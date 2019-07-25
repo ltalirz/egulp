@@ -11,6 +11,6 @@ install:
 
 script:
   # run example
-  - cd example/HKUST1 && egulp HKUST.cif GMP.param configure.input && cd -
+  - cd example/HKUST1 && egulp HKUST1.cif GMP.param configure.input && cd -
   # run CIF parsing tests
   - cd tests/cif_parsing && ./run.sh && cd -
